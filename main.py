@@ -45,9 +45,8 @@ def playlist(playlist_name):
     return render_template('playlists.html', playlist_name=playlist_name, songs=songs)
 
 
-@app.route('/view_playlists/<playlists>')
-def view_playlists(playlists):
-
+# @app.route('/view_playlists/<playlists>')
+# def view_playlists(playlists):
 
 
 if __name__ == '__main__':
