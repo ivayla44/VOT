@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <title>{{ playlist_name }} Playlist</title>
+</head>
+<body>
+    <h1>{{ playlist_name }} Playlist</h1>
+    <ul>
+        {% for song in songs %}
+        <li>{{ song }}</li>
+        {% endfor %}
+    </ul>
+    <a href="index.html">Go Back</a>
+</body>
+</html>
