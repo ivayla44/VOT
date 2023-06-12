@@ -2,6 +2,7 @@ from flask import *
 import os
 
 app = Flask(__name__)
+playlists = []
 
 
 @app.route('/')
@@ -42,11 +43,19 @@ def playlist(playlist_name):
     with open(playlist_path, 'r') as file:
         songs = file.read().splitlines()
 
-    return render_template('playlists.html', playlist_name=playlist_name, songs=songs)
+    playlist_info = {
+        'name': playlist_name,
+        'songs': songs
+    }
+
+    playlists.append(playlist_info)
+
+    return redirect(url_for('view_playlists'))
 
 
-# @app.route('/view_playlists/<playlists>')
-# def view_playlists(playlists):
+@app.route('/view_playlists')
+def view_playlists():
+    return render_template('view_playlists.html', playlists=playlists)
 
 
 if __name__ == '__main__':

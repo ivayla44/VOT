@@ -2,9 +2,11 @@
 <html>
 <head>
     <title>View Playlists</title>
+    <link rel="stylesheet" type="text/css" href="../static/playlist.css">
 </head>
 <body>
     <h1>View Playlists</h1>
+    {% if playlists %}
     <ul>
         {% for playlist in playlists %}
         <li>
@@ -17,6 +19,9 @@
         </li>
         {% endfor %}
     </ul>
-    <a href="index.html">Go Back</a>
+    {% else %}
+    <p>No playlists found.</p>
+    {% endif %}
+    <a href="/">Go Back</a>
 </body>
 </html>
